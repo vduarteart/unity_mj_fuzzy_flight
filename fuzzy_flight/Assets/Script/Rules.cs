@@ -6,11 +6,20 @@ public class Rules : MonoBehaviour
 {
 
     public float Timer;
+    public float CountdownTimer;
 
-    // Update is called once per frame
+    // The time the game is played
     void Update()
     {
-        Timer -= Time.deltaTime;
+        if (CountdownTimer > 0)
+        {
+            CountdownTimer -= Time.deltaTime;
+        }
+
+        if (CountdownTimer <= 0)
+        {
+            Timer -= Time.deltaTime;
+        }
 
         if (Timer <= 0)
         {
