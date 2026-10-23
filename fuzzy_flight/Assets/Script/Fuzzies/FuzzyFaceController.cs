@@ -44,13 +44,8 @@ public class CartoonFaceController : MonoBehaviour
 
         ChooseTarget();
 
-        Debug.Log("CartoonFaceController iniciado.");
+   
 
-Debug.Log("Face: " + (face != null ? face.name : "NÃO ATRIBUÍDA"));
-Debug.Log("Olho esquerdo: " + (leftEyeSphere != null ? leftEyeSphere.name : "NÃO ATRIBUÍDO"));
-Debug.Log("Osso esquerdo: " + (leftPupilBone != null ? leftPupilBone.name : "NÃO ATRIBUÍDO"));
-Debug.Log("Olho direito: " + (rightEyeSphere != null ? rightEyeSphere.name : "NÃO ATRIBUÍDO"));
-Debug.Log("Osso direito: " + (rightPupilBone != null ? rightPupilBone.name : "NÃO ATRIBUÍDO"));
 
     }
 
