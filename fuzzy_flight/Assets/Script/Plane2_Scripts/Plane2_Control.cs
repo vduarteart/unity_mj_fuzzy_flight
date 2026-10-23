@@ -20,8 +20,8 @@ public class Plane2_Control : MonoBehaviour
 
         if (Keyboard.current.upArrowKey.isPressed) moveInput.y = 1f;
         if (Keyboard.current.downArrowKey.isPressed) moveInput.y = -1f;
-        if (Keyboard.current.leftArrowKey.isPressed) moveInput.x = -1f;
-        if (Keyboard.current.rightArrowKey.isPressed) moveInput.x = 1f;
+        if (Keyboard.current.leftArrowKey.isPressed) moveInput.x = 1f;
+        if (Keyboard.current.rightArrowKey.isPressed) moveInput.x = -1f;
 
         // feed moveDirection with input.
         moveInput = new Vector3(0, moveInput.y, moveInput.x);

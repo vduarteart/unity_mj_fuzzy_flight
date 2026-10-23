@@ -32,7 +32,8 @@ public class Player_Health : MonoBehaviour
 
                 if (Health <= 0)
                 {
-                    Destroy(gameObject);
+                    //Destroy(gameObject);
+                    Debug.Log("Plane Dead");
                 }
             }
         }
