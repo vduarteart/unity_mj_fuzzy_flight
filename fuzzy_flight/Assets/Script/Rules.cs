@@ -1,12 +1,13 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class Rules : MonoBehaviour
 {
-
     public float Timer;
     public float CountdownTimer;
+    public float EndTimer;
     public GameObject Plane1, Plane2; 
 
     // The time the game is played
@@ -27,15 +28,41 @@ public class Rules : MonoBehaviour
             {
                 if (player2_health.Health == 0)
                 {
-                    //End the game
-                    Debug.Log("Kus");
+                    EndTimer -= Time.deltaTime;
+
+                    if (EndTimer <= 0)
+                    {
+                        SceneManager.LoadScene("Lose_Lose");
+                        Debug.Log("Lose Lose");
+                    }
                 }
             }
         }
 
         if (Timer <= 0)
         {
-            //End the Game
+            EndTimer -= Time.deltaTime;
+
+            if (EndTimer <= 0)
+            {
+                if (player1_health.Health <= 0)
+                {
+                    SceneManager.LoadScene("Lizard_Win");
+                    Debug.Log("Lizard Win");
+                }
+
+                if (player2_health.Health <= 0)
+                {
+                    SceneManager.LoadScene("Monkey_Win");
+                    Debug.Log("Monkey Win");
+                }
+
+                else
+                {
+                    SceneManager.LoadScene("Win_Win");
+                    Debug.Log("Win Win");
+                }
+            }
         }
     }
 }
