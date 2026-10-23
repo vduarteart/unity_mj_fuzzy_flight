@@ -24,9 +24,9 @@ public class Rules : MonoBehaviour
         if (CountdownTimer <= 0)
         {
             Timer -= Time.deltaTime;
-            if (player1_health.Health == 0)
+            if (player1_health.Health <= 0)
             {
-                if (player2_health.Health == 0)
+                if (player2_health.Health <= 0)
                 {
                     EndTimer -= Time.deltaTime;
 
