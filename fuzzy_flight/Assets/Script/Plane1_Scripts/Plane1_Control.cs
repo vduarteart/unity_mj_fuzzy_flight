@@ -8,6 +8,7 @@ public class Plane1_Control : MonoBehaviour
 
     CharacterController _controller;
     public float speed = 7f;
+    public float CountdownTimer;
 
     void Awake()
     {
@@ -16,20 +17,28 @@ public class Plane1_Control : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector3 moveInput = Vector3.zero;
+        if (CountdownTimer > 0)
+        {
+            CountdownTimer -= Time.deltaTime;
+        }
 
-        if (Keyboard.current.wKey.isPressed) moveInput.y = 1f;
-        if (Keyboard.current.sKey.isPressed) moveInput.y = -1f;
-        if (Keyboard.current.aKey.isPressed) moveInput.x = 1f;
-        if (Keyboard.current.dKey.isPressed) moveInput.x = -1f;
+        if (CountdownTimer <= 0)
+        {
+            Vector3 moveInput = Vector3.zero;
 
-        // feed moveDirection with input.
-        moveInput = new Vector3(0, moveInput.y, moveInput.x);
-        moveInput = transform.TransformDirection(moveInput);
+            if (Keyboard.current.wKey.isPressed) moveInput.y = 1f;
+            if (Keyboard.current.sKey.isPressed) moveInput.y = -1f;
+            if (Keyboard.current.aKey.isPressed) moveInput.x = 1f;
+            if (Keyboard.current.dKey.isPressed) moveInput.x = -1f;
 
-        // multiply it by speed.
-        moveInput *= speed;
+            // feed moveDirection with input.
+            moveInput = new Vector3(0, moveInput.y, moveInput.x);
+            moveInput = transform.TransformDirection(moveInput);
 
-        _controller.Move(moveInput * Time.deltaTime);
+            // multiply it by speed.
+            moveInput *= speed;
+
+            _controller.Move(moveInput * Time.deltaTime);
+        } 
     }
 }
