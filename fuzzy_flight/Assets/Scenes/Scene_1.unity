@@ -5955,6 +5955,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Working Level Door (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 8465224403379983803, guid: de581057b4ce9b743abd2a83556eab0a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9093141559357918977, guid: de581057b4ce9b743abd2a83556eab0a, type: 3}
       propertyPath: m_LocalScale.x
       value: 2

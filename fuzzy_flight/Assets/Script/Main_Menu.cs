@@ -6,12 +6,32 @@ using UnityEngine.SceneManagement;
 
 public class Main_Menu : MonoBehaviour
 {
-    // Update is called once per frame
+    public GameObject StartText;
+    public GameObject Loading;
+    public float MercyTimer = 1f;
+
+    void Start()
+    {
+        StartText.SetActive(true);
+        Loading.SetActive(false);
+    }
+
     void Update()
     {
-        if (Keyboard.current.wKey.isPressed || Keyboard.current.upArrowKey.isPressed)
+        if (MercyTimer > 0)
         {
-            SceneManager.LoadScene("Scene_1");
+            MercyTimer -= Time.deltaTime;
         }
+
+        if (MercyTimer <= 0)
+        {
+            if (Keyboard.current.wKey.isPressed || Keyboard.current.upArrowKey.isPressed)
+            {
+                StartText.SetActive(false);
+                Loading.SetActive(true);
+                SceneManager.LoadScene("Scene_1");
+            }
+        }
+
     }
 }
