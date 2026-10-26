@@ -9,6 +9,7 @@ TagManager:
   - Fuzzy
   - Sesame
   - KILL
+  - Map
   layers:
   - Default
   - TransparentFX

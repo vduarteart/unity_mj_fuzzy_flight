@@ -8,7 +8,8 @@ public class Rules : MonoBehaviour
     public float Timer;
     public float CountdownTimer;
     public float EndTimer;
-    public GameObject Plane1, Plane2; 
+    public GameObject Plane1;
+    public GameObject Plane2;
 
     // The time the game is played
     void Update()
@@ -57,7 +58,7 @@ public class Rules : MonoBehaviour
                     Debug.Log("Monkey Win");
                 }
 
-                else
+                if (player2_health.Health > 0 && player1_health.Health > 0)
                 {
                     SceneManager.LoadScene("Win_Win");
                     Debug.Log("Win Win");
